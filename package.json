@@ -16,6 +16,7 @@
   "homepage": "https://bitbucket.org/evmo-client/evmo-server#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "mongose": "0.0.2-security",
     "nodemon": "^2.0.2"
   }
 }
