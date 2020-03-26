@@ -1,0 +1,6 @@
+error
+
+return res.status(500).json({
+        seccess: false,
+        error: err
+      })
