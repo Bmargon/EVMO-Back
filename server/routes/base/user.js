@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const User = require('../../models/user_model')
+const bcrypt = require('bcrypt');
+
 // // //
 // Get
 // // //
@@ -60,7 +62,7 @@ app.post('/user', (req, res) => {
     name: body.name,
     surname: body.surname,
     email: body.email,
-    password: body.password
+    password: bcrypt.hashSync(body.password, 5)
   })
 
   user.save((err, userDB) => {
@@ -78,6 +80,7 @@ app.post('/user', (req, res) => {
 // // //
 // PUT
 // // //
+
 // // //
 // DELETE
 // // //
