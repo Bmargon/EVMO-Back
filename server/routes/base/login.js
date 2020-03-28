@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const User = require('../../models/user_model')
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const config = require('../../config/configConsts')
 // // //
 // Get by email
 // // //
@@ -26,9 +28,10 @@ app.post('/login', (req, res) => {
     }
     if (userDB) {
       if (bcrypt.compareSync(body.password, userDB.password)) {
-        console.log('ok')
+        let token = jwt.sign({user: userDB}, config.jwtSEED, { expiresIn: config.jwtExpiration })
         return res.json({
-          userDB
+          userDB,
+          token
         })
       } else {
         return res.status(404).json({

@@ -2,11 +2,11 @@ const express = require('express');
 const app = express();
 const User = require('../../models/user_model')
 const bcrypt = require('bcrypt');
-
+const { jwtAuth } = require('../../middlewares/jwtAuth')
 // // //
 // Get
 // // //
-app.get('/user', (req, res) => {
+app.get('/user', jwtAuth, (req, res) => {
 
   User.find({}, (err, userDB) => {
     if(err) {
