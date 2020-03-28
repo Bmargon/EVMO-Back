@@ -12,6 +12,7 @@ let Event = new Schema({
   maxAssistants: {type: Number, required: true},
   creationDate: {type: String,required: true},
   eventDate: {type: String, required: true},
+  time: {type: String, required: true},
   passwordRequired: {type: Boolean, default: false, required: true},
   password: {type: String, required: false},
   assistantsConfirmed: {type: Array, required: false},

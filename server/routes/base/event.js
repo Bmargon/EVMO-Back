@@ -11,6 +11,11 @@ app.post('/event', jwtAuth, (req, res) => {
   let body = req.body
   let userID = req.user._id
 
+  let year = new Date().getFullYear()
+  let month = new Date().getMonth()
+  let day = new Date().getDay()
+  let date = new Date(year, month, day)
+
   let newEvent = new Event({
     name: body.name ,
     description: body.description ,
@@ -20,7 +25,7 @@ app.post('/event', jwtAuth, (req, res) => {
     adress: body.adress ,
     creator: userID,
     maxAssistants: body.maxAssistants ,
-    creationDate: body.creationDate ,
+    creationDate: date,
     eventDate: body.eventDate ,
     passwordRequired: body.passwordRequired ,
     password: body.password ,
