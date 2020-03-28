@@ -33,7 +33,7 @@ app.post('/login', (req, res) => {
       } else {
         return res.status(404).json({
           seccess: false,
-          menssage: 'Error, las contraseñas no coinciden',
+          menssage: 'Error, email y/o contraseña incorrecto',
           error: err
         })
       }

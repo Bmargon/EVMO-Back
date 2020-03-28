@@ -6,6 +6,7 @@ let User = new Schema({
   surname: {type: String, required: [true, 'El apellido es obligatorio']},
   email: {type: String, unique: true,required: [true, 'El email es obligatorio']},
   password: {type: String, required: true},
+  facebook: {type: Boolean, required: true, default: false},
   events: {type: Array},
   friends: {type: Array},
   tickets: {type: Array}
