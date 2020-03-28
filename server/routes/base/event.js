@@ -46,20 +46,10 @@ app.post('/event', jwtAuth, (req, res) => {
 
       userDB.events.push(eventDB)
       userDB.save()
-      console.log(userDB)
-      // userUpdated.save((err) => {
-      //   if (err) {
-      //     return res.status(500).json({
-      //       seccess: false,
-      //       message: 'Error al añadir evento',
-      //       error: err
-      //     })
-      //   }
 
-        res.json({
-          eventDB
-        })
-      // })
+      res.json({
+        eventDB
+      })
     })
   })
 })
