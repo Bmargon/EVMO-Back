@@ -1,6 +1,9 @@
 error
 
-return res.status(500).json({
+    if (err) {
+      return res.status(500).json({
         seccess: false,
+        message: 'Error al crear evento',
         error: err
       })
+    }

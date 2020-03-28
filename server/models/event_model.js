@@ -9,11 +9,11 @@ let Event = new Schema({
   adress: { type: String, required: true },
   creator: {type: Schema.Types.ObjectId, required: true},
   maxAssistants: {type: Number, required: true},
-  CreationDate: {type: String,required: true},
+  creationDate: {type: String,required: true},
   eventDate: {type: String, required: true},
   passwordRequired: {type: Boolean, default: false, required: true},
-  password: {type: String, required: true},
-  assistantsConfirmed: {type: Array, required: true},
+  password: {type: String, required: false},
+  assistantsConfirmed: {type: Array, required: false},
 })
 
 module.exports = mongoose.model('Event', Event)
