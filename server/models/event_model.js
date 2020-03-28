@@ -6,6 +6,7 @@ let Event = new Schema({
   description: {type: String, required: false},
   free: {type: Boolean, default: true, required: true},
   price: {type: Number, required: false},
+  public: {type: Boolean, required: true, default: true},
   adress: { type: String, required: true },
   creator: {type: Schema.Types.ObjectId, required: true},
   maxAssistants: {type: Number, required: true},

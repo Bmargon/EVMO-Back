@@ -16,6 +16,7 @@ app.post('/event', jwtAuth, (req, res) => {
     description: body.description ,
     free: body.free ,
     price: body.price ,
+    public: body.public,
     adress: body.adress ,
     creator: userID,
     maxAssistants: body.maxAssistants ,
