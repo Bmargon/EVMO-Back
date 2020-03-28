@@ -57,7 +57,7 @@ app.post('/event', jwtAuth, (req, res) => {
 // // //
 // Get all public events
 // // //
-app.get('/event', jwtAuth,(req, res) => {
+app.get('/event', jwtAuth, (req, res) => {
   Event.find({public: true}, (err, eventDB) => {
     if (err) {
       return res.status(500).json({
