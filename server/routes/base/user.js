@@ -54,9 +54,30 @@ app.post('/user', (req, res) => {
   })
 })
 // // //
-// PUT
+// GET a single user
 // // //
+app.get('/user/:id', jwtAuth, (req, res) => {
 
+  let id = req.params.id
+
+  User.findById(id, (err, userDB) => {
+    if (err) {
+      return res.status(500).json({
+        seccess: false,
+        error: err
+      })
+    }
+    if (!userDB) {
+      return res.status(404).json({
+        seccess: false,
+        error: err
+      })
+    }
+    res.json({
+      userDB
+    })
+  })
+})
 // // //
 // DELETE
 // // //
