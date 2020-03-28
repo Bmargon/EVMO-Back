@@ -8,7 +8,7 @@ let Event = new Schema({
   price: {type: Number, required: false},
   public: {type: Boolean, required: true, default: true},
   adress: { type: String, required: true },
-  creator: {type: Schema.Types.ObjectId, required: true},
+  creator: {type: Schema.Types.ObjectId, required: true, ref: 'User'},
   maxAssistants: {type: Number, required: true},
   creationDate: {type: String,required: true},
   eventDate: {type: String, required: true},
