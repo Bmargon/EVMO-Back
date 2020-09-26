@@ -24,12 +24,13 @@ app.post('/ticket/:id', jwtAuth, (req, res) => {
       })
     }
     
-    let year = new Date().getFullYear()
-    let month = new Date().getMonth()
-    let day = new Date().getDay()
-    var today = new Date(year, month, day)
+    
+    // let year = new Date().getFullYear()
+    // let month = new Date().getMonth()
+    // let day = new Date().getDay()
+    // var today = new Date(year, month, day)
 
-    console.log(today)
+    // console.log(today)
     // let ticket = new Ticket({
     //   key: keygen._(),
     //   // jwt: jwt.sign({eventInfo: event}),
